@@ -1,0 +1,96 @@
+1.
+   1) number
+   2) string
+   3) string
+   4) string
+   5) undefined
+   6) boolean
+   7) object (prototype: array)
+   8) object (the assignment marks between properties and values are incorrect; they must be colon)
+
+
+2. const input = prompt("Enter Some data...");
+   alert(typeof input);
+
+   // but I think the question is wrong itseft! becuase the typeof input is always string! unless the user presses escape 
+   // so the null will be returned and the typeof will be object.
+   // maybe the question must be something like this: consider a desired value in the code and alert the typeof it.
+   // so the answer will be:
+
+   // const data = 'hello'; // 10; null; undefined; 35n; { ... }; etc...
+   // alert(typeof data);
+
+
+3. const userName = prompt("Enter your Name!");
+   if (userName) {          // to check if the user entered nothing or pressed escape.
+      const confirmed = confirm(`Are you sure your name is ${userName}?`);
+      if (confirmed) alert(`Hello ${userName}!`);
+      else alert("you didnt confirm your name!");
+   } else alert("you didnt enter your name!");
+
+
+4. // I used parseFloat instead of unary plus operator because (+) converts "" to 0 and I dont want that.
+   const num1 = parseFloat(prompt("Enter the first number"));  
+   const num2 = parseFloat(prompt("Enter the secont number"));
+   const sum = num1 + num2;                         // if any of two numbers are NaN then sum will be NaN too.
+   // and because NaNs are not equal, I converted possible NaN value of sum to a string so I can check if the sum is NaN or not:
+   alert(String(sum) === "NaN" ? "you entered at least one invalid Number!" : sum);
+
+
+5. <!DOCTYPE html>
+   <html lang="en">
+      <head>
+         <meta charset="UTF-8" />
+         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+         <title>Q #5</title>
+      </head>
+      <body>
+         <h1>Question number 5</h1>
+         <hr />
+         <a href="https://google.com/" target="_blank">click here!</a>
+         <!-- we can remove target attribute (or assigning to _self) to force opne the link in the same tab -->
+      </body>
+   </html>
+
+
+6. when we declare a variable in js but we dont assign any initial value to it, its value becomes undefined.
+   but null means the intentional absence of the value for a variable. it represents nothing, empty or unknown value.
+   we usually assign null to a variable intentionally in the code for some reasons while undefined means the value is 
+   not assigned. the 0 at last is a normal number value that can be assigned to a variable.
+   and about data types: undefined is undefined. null is an object. (it doesnt make sense but its for some legacy reasons)
+   and 0 is a number.
+   they are all falsy values but when it comes to conversion to numbers, undefined becomes NaN, null becomes 0, and 0 is 
+   a number itself. they have also some other differences but i dont want to be verbose :)
+
+
+7. first let me clarify that const and let are completely the same in behavior and features in js and the only difference 
+   between them is that const is used for declaring varialbles that are never going to be reassigned atfer the initial 
+   assignment (adjacent to declaration). but let is for cases which we are going to reassign new values to the varialbe.
+   and now the difference between var and (let,const): var is global scope but (let,const) are local(block) scope. it means
+   that varialbes declared by var is accessible throughout the whole of the code. but ones which are declared by (let,const)
+   are only accessible through the code block (in curly braces) where in they are declared. another difference is that var 
+   is hoisted but (let,const) are not. it means we can use the varialbes declared by var before their declaration. they are 
+   hoisted to the top of the code when compiling but (let,const) are not. another difference is that variables declared by
+   var can be redeclared (using var again) but you can not redeclare a varialbe declared by (let,const).
+   var was in js from beginning but (let,const) were introduced in ES6.
+
+
+8. a library in javascript is a collection of pre-written functions or modules that provide specific functionality. developers
+   can selectively use these functions in their applications. for example: the Lodash library provides utility functions like 
+   sorting arrays or manipulating strings.
+   but a framework in javascript is a more comprehensive structure that includes libraries, tools, and conventions to build 
+   applications. it dictates the overall architecture and flow of an application. developers must follow the framework structure 
+   and conventions. an example is AngularJS, which provides a complete framework for building dynamic web applications.
+   libraries offer flexibility and allow developers to extend or modify their functionality. for example: the Axios library 
+   provides an easy way to make HTTP requests and can be customized with interceptors for authentication or error handling.
+   React is a popular library that provides a component-based architecture for building user interfaces. developers provide 
+   components and let React handle rendering and updating the UI.
+   libraries provide specific functions that developers can use as needed, while frameworks offer a structured approach with 
+   predefined conventions for building applications.
+
+
+9. first part is a single <!DOCTYPE html> statement that tells the browsers this is a html5 document. the main and root element
+   is <html> element which contains all other elements of the document: they are <head> and <body>. head elenemt contains all 
+   parts of data or metadata which are not to be shown in the browser and only describes the document with some other elements
+   like: meta, link(for linking other assets and files to the document), title(shown in the browser tab), etc...
+   and the body element which contains all the content that is going to be shown in the browser and the webpage.
