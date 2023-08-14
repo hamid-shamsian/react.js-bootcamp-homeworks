@@ -1,0 +1,48 @@
+@font-face {
+   font-family: iranYekan;
+   src: url(Qs_Iranyekan.ttf);
+}
+
+article {
+   font-family: iranYekan;
+   width: 700px;
+   margin: 50px auto;
+   padding: 30px;
+   color: #444;
+   background-color: #ccc;
+   border-radius: 5px;
+   text-align: right;
+   direction: rtl;
+}
+
+h1 {
+   margin-top: 0;
+}
+
+main,
+div {
+   display: inline-block;
+}
+
+main {
+   width: 70%;
+}
+
+article div:nth-child(2) {
+   width: 55%;
+   vertical-align: top;
+}
+
+article div:nth-child(3) {
+   width: 35%;
+}
+
+img {
+   height: 250px;
+   vertical-align: top;
+   border-radius: 30px;
+}
+
+span {
+   font-weight: 900;
+}

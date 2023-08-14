@@ -1,0 +1,60 @@
+body {
+   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+article {
+   width: 500px;
+   box-shadow: 0 0 5px #000a;
+   border-radius: 8px;
+   margin: 50px auto;
+}
+
+.profile-img {
+   width: 40px;
+   display: inline-block;
+   margin: 15px;
+   vertical-align: middle;
+}
+
+.ellipsis-icon {
+   vertical-align: middle;
+   margin-left: 345px;
+}
+
+.main-img {
+   background-image: url(m101_spiral_galaxy.jpg);
+   height: 275px;
+   background-size: contain;
+}
+
+main {
+   padding: 15px;
+}
+
+p {
+   margin: 10px 0;
+}
+
+.icon {
+   width: 25px;
+   margin-right: 5px;
+}
+
+.save-icon {
+   margin-left: 341px;
+   margin-right: 0;
+}
+
+p span:first-of-type {
+   font-weight: 900;
+}
+
+p span:last-of-type,
+.view-comments,
+p:last-of-type {
+   opacity: 0.5;
+}
+
+P:last-of-type {
+   font-size: 70%;
+}
