@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Question 5</title>
+   </head>
+   <body>
+      <script>
+         const ask = (question, yes, no) => {
+            if (confirm(question)) yes();
+            else no();
+         };
+
+         ask(
+            "do you agree?",
+            () => alert("you agreed."),
+            () => alert("you canceled the execution.")
+         );
+      </script>
+   </body>
+</html>

@@ -1,0 +1,40 @@
+.notif {
+   position: absolute;
+   display: inline-block;
+   padding: 10px 30px 10px 20px;
+   border-radius: 20px;
+   background-color: #555;
+   color: #fff;
+   font-size: 20px;
+   cursor: pointer;
+}
+
+.green {
+   background-color: green;
+}
+
+.red {
+   background-color: red;
+}
+
+.bold {
+   font-weight: 700;
+}
+
+.notif::before {
+   content: "×";
+   position: absolute;
+   top: 0;
+   right: -5px;
+   background-color: #000;
+   color: #fff;
+   line-height: 0.6;
+   border-radius: 50%;
+   font-size: 25px;
+   padding: 1px 2px 1px 1px;
+   transition: transform 0.3s;
+}
+
+.notif:hover::before {
+   transform: scale(1.5);
+}
