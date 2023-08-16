@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Question 2</title>
+   </head>
+   <body>
+      <script>
+         const sortFromHighToLow = (...arraysOfNumbers) =>
+            arraysOfNumbers.reduce((universalArr, nestedArr) => [...universalArr, ...nestedArr]).sort((a, b) => b - a);
+
+         console.log(sortFromHighToLow([1, 4, 3], [56, 2, 7], [9, 5, 13], [6, 10, 63]));
+      </script>
+   </body>
+</html>
