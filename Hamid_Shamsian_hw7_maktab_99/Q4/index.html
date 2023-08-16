@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Question 4</title>
+   </head>
+   <body>
+      <script>
+         let map = new Map();
+         map.set("name", "john");
+
+         // let keys = map.keys();
+         // keys.push("newKey");
+
+         // >> Situation: the line above will get us a TypeError says: keys.push is not a function.
+         // the reason for this error is that map.keys() method returns an ITERABLE-OBJECT (but not an array) of map's keys.
+         // so we cannot use array methods on that.
+
+         // >> Solution: to solve this problem we can simply convert this iterable-object into an ordinary js array using
+         // spread operator and array literal. so we can replace line 13 with this line:
+
+         let keys = [...map.keys()];
+
+         // now we can push a new key to it: (or use any array methods on that)
+
+         keys.push("newKey");
+
+         console.log(keys);
+      </script>
+   </body>
+</html>
