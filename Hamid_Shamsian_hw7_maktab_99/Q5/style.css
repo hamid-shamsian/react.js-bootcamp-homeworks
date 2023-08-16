@@ -1,0 +1,204 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Montserrat:wght@300;500;900&display=swap");
+
+:root {
+   --primary-black: #383c3e;
+   --primary-green: #008f17;
+   --grey-line: #737b7d;
+   --input-text: #8e8e8e;
+}
+
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+body {
+   font-family: Inter;
+}
+
+.container {
+   width: 1120px;
+   margin: 0 auto;
+}
+
+nav {
+   background: #95959520;
+   padding: 10px 0;
+}
+
+.flex {
+   display: flex;
+}
+
+nav ul {
+   list-style: none;
+   display: flex;
+   gap: 32px;
+   margin-left: 150px;
+   align-items: center;
+   color: var(--primary-black);
+   font-size: 14px;
+   font-weight: 400;
+}
+
+nav ul li {
+   padding: 5px 0;
+   cursor: pointer;
+}
+
+nav ul li.active {
+   border-bottom: 2px solid var(--primary-green);
+}
+
+.logo {
+   width: 35px;
+}
+
+main {
+   width: 548px;
+   margin-right: 215px;
+   margin-bottom: 75px;
+}
+
+h1 {
+   margin-top: 80px;
+   margin-bottom: 24px;
+   color: var(--primary-black);
+   font-size: 44px;
+   font-weight: 700;
+}
+
+.tagline {
+   color: var(--grey-line);
+   font-size: 16px;
+   font-weight: 400;
+   margin-bottom: 80px;
+}
+
+.main-form {
+   display: flex;
+   flex-direction: column;
+   gap: 40px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"] {
+   border: 0;
+   outline: 0;
+   border-bottom: 1px solid var(--grey-line);
+   padding: 15px;
+   color: var(--primary-black);
+   font-size: 16px;
+   font-weight: 400;
+}
+
+.input-twin input:first-child {
+   flex-grow: 1;
+   margin-right: 20px;
+}
+
+.input-twin input:last-child {
+   width: 150px;
+}
+
+.input-file::-webkit-file-upload-button {
+   visibility: hidden;
+}
+
+.input-file::before {
+   content: "Upload Additional file";
+   color: var(--input-text);
+   width: 99.5%;
+   display: inline-flex;
+   justify-content: center;
+   align-items: center;
+   border: 1px dotted #999;
+   padding: 50px 0;
+   cursor: pointer;
+   font-size: 14px;
+   font-weight: 400;
+}
+
+.tip {
+   color: var(--input-text);
+   font-size: 10px;
+   font-weight: 400;
+   position: relative;
+   top: -30px;
+}
+
+.submit {
+   background-color: var(--primary-green);
+   padding: 16px;
+   color: #fff;
+   border: 0;
+   cursor: pointer;
+}
+
+.input-group label {
+   font-size: 14px;
+   font-weight: 400;
+   color: var(--primary-black);
+   margin-left: 10px;
+}
+
+.input-group {
+   display: flex;
+   align-items: center;
+   position: relative;
+   top: -10px;
+   margin-left: 10px;
+}
+
+aside * {
+   font-size: 16px;
+   color: var(--primary-black);
+}
+
+h2 {
+   font-weight: 700;
+   margin-bottom: 32px;
+}
+
+aside p {
+   margin-bottom: 24px;
+}
+
+aside section {
+   margin-bottom: 80px;
+}
+
+aside .validation {
+   margin-right: 20px;
+}
+
+aside input:last-child {
+   width: 75px;
+}
+
+aside .submit {
+   font-size: 30px;
+   padding: 0;
+}
+
+.validation input {
+   width: 100%;
+}
+
+.validation {
+   position: relative;
+}
+
+.validity {
+   position: absolute;
+   bottom: -25px;
+   left: 15px;
+}
+
+input[type="email"]:invalid + span::after {
+   content: "Please enter valid email address";
+   font-size: 12px;
+   color: #f00;
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Question 5</title>
+      <link rel="stylesheet" href="style.css" />
+   </head>
+   <body>
+      <nav>
+         <div class="container flex">
+            <img class="logo" src="images/Logo.svg" alt="" />
+            <ul>
+               <li>Company</li>
+               <li>Services</li>
+               <li>FinTech Solutions</li>
+               <li>Products</li>
+               <li>Portfolio</li>
+               <li class="active">Contact us</li>
+            </ul>
+         </div>
+      </nav>
+      <header class="container">
+         <h1>Contact us</h1>
+         <p class="tagline">Need an experienced and skilled hand with custom IT projects?<br />Fill out the form to get a free consultaion.</p>
+      </header>
+      <div class="flex container">
+         <main>
+            <form action="" class="main-form">
+               <input name="company" type="text" placeholder="Your Company Name" required />
+               <input name="business" type="text" placeholder="Nature of Business" required />
+
+               <div class="flex input-twin">
+                  <input name="address" type="text" placeholder="Address" required />
+                  <input name="postcode" type="text" placeholder="Postcode" required />
+               </div>
+               <input name="contact" type="text" placeholder="Contact Name" required />
+               <input name="phone" type="number" placeholder="Contact Phone" required />
+               <div class="validation">
+                  <input name="email" type="email" name="" id="" placeholder="Your email" />
+                  <span class="validity"></span>
+               </div>
+               <input name="linkedin" type="text" placeholder="Linkedin" required />
+               <input name="idea" type="text" placeholder="Let's talk about your idea" />
+               <input type="file" name="" id="" class="input-file" />
+               <span class="tip">Attach file. File size of your documents should not exceed 10MB</span>
+               <input type="submit" class="submit" value="SUBMIT" />
+               <div class="input-group">
+                  <input type="checkbox" id="nda" />
+                  <label for="nda">I want to protect my data by signing an NDA</label>
+               </div>
+            </form>
+         </main>
+         <aside>
+            <section>
+               <h2>Offices</h2>
+               <p>
+                  United States<br />
+                  500 5th Avenue Suite 400, NY 10110
+               </p>
+               <p>
+                  United Kingdom<br />
+                  High St, Bromley BR1 1DN
+               </p>
+               <p>
+                  France<br />
+                  80 avenue des Terroirs de France, Paris
+               </p>
+            </section>
+            <section>
+               <h2>For Quick Inquiries</h2>
+               <p><img src="images/flag-uk 1.svg" alt="" /> +44 7777777777</p>
+               <p><img src="images/Vector.svg" alt="" /> +1 3333333330</p>
+            </section>
+            <section>
+               <h2>Would you like to join our newsletter?</h2>
+               <form action="" class="flex">
+                  <div class="validation">
+                     <input name="email" type="email" name="" placeholder="Email" class="newsletter" />
+                     <span class="validity"></span>
+                  </div>
+                  <input type="submit" class="submit" value="✔" />
+               </form>
+            </section>
+         </aside>
+      </div>
+      <script src="script.js"></script>
+   </body>
+</html>
