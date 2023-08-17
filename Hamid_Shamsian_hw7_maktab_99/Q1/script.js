@@ -16,8 +16,7 @@ const topSalary = salaries => {
    for (const [name, salary] of Object.entries(salaries)) {
       if (salary > topSalary) {
          topSalary = salary;
-         highestPaidPeople.length = 0;
-         highestPaidPeople.push(name);
+         highestPaidPeople = [name];
       } else if (salary === topSalary) {
          highestPaidPeople.push(name);
       }
