@@ -7,8 +7,9 @@
    </head>
    <body>
       <script>
-         const sortFromHighToLow = (...arraysOfNumbers) =>
-            arraysOfNumbers.reduce((universalArr, nestedArr) => [...universalArr, ...nestedArr]).sort((a, b) => b - a);
+         const sortFromHighToLow = (...arraysOfNumbers) => [].concat(...arraysOfNumbers).sort((a, b) => b - a);
+         // or we can return:
+         // arraysOfNumbers.reduce((universalArr, nestedArr) => [...universalArr, ...nestedArr]).sort((a, b) => b - a);
 
          console.log(sortFromHighToLow([1, 4, 3], [56, 2, 7], [9, 5, 13], [6, 10, 63]));
       </script>
