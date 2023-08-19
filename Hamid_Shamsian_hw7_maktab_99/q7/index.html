@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Question 7</title>
+      <link rel="stylesheet" href="style.css" />
+   </head>
+   <body>
+      <header class="container">
+         <h1>مشاهده ویدیو معرفی محصولات</h1>
+         <video src="video.mp4" controls></video>
+      </header>
+      <main class="container">
+         <div class="filters">
+            <div>
+               <label>Model:</label>
+               <select name="model">
+                  <option value="none">All</option>
+                  <option value="hp">HP</option>
+                  <option value="asus">ASUS</option>
+                  <option value="lenovo">LENOVO</option>
+                  <option value="acer">ACER</option>
+               </select>
+            </div>
+            <div>
+               <label>Processor:</label>
+               <select name="processor">
+                  <option value="none">All</option>
+                  <option value="intel">INTEL</option>
+                  <option value="amd">AMD</option>
+               </select>
+            </div>
+            <div>
+               <label>RAM:</label>
+               <select name="ram">
+                  <option value="none">All</option>
+                  <option value="adata">Adata</option>
+                  <option value="crucial">Crucial</option>
+               </select>
+            </div>
+            <div>
+               <label>Hard Disk:</label>
+               <select name="hardDisk">
+                  <option value="none">All</option>
+                  <option value="wd">WD</option>
+                  <option value="kingstone">Kingstone</option>
+               </select>
+            </div>
+            <div>
+               <label>Display:</label>
+               <select name="display">
+                  <option value="none">All</option>
+                  <option value="15.6">15.6 inch</option>
+                  <option value="19">19 inch</option>
+               </select>
+            </div>
+         </div>
+         <hr />
+         <p id="resultsCount"></p>
+         <table>
+            <thead>
+               <tr>
+                  <th id="model">Laptop model</th>
+                  <th>Picture</th>
+                  <th id="processor">Processor</th>
+                  <th id="ram">RAM</th>
+                  <th id="hardDisk">Hard Disk</th>
+                  <th id="display">Display</th>
+                  <th>Graphics</th>
+                  <th>OS</th>
+                  <th>Weight</th>
+                  <th>Battery</th>
+                  <th>Price</th>
+                  <th>Purchase</th>
+               </tr>
+            </thead>
+            <tbody></tbody>
+         </table>
+      </main>
+
+      <script src="script.js" type="module"></script>
+      <script src="assets/laptops.js" type="module"></script>
+   </body>
+</html>
