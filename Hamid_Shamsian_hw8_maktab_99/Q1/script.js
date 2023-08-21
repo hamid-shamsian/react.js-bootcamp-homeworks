@@ -1,7 +1,7 @@
 const user = {};
 
 const setterGenerator = function (propertyKey) {
-   console.log(this); // will log 'user' object because 'this' is bound to 'user' in line 22.
+   console.log(this); // will log 'user' object because 'this' is bound to 'user' in line 13 (and 16).
 
    return properyValue => {
       this[propertyKey] = properyValue;
@@ -18,7 +18,7 @@ console.log(userAgeSetter(30));
 
 console.log(user);
 
-/////////////////////////////////////////////////////////////////////////////////////
+// ### A different logic and implementation: /////////////////////////////////////////////////
 
 const privateObjectGenerator = () => {
    const privateObject = {};
