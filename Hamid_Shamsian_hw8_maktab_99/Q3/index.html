@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Question 3</title>
+   </head>
+   <body>
+      <script>
+         const counterMaker = (initialValue = 0) => {
+            let counter = initialValue;
+            return (step = 0) => (counter += step);
+         };
+
+         const counter = counterMaker(); // without initial value
+
+         console.log(counter()); // 0
+         console.log(counter()); // 0
+         console.log(counter(1)); // 1
+         console.log(counter()); // 1
+         console.log(counter(3)); // 4
+         console.log(counter(7)); // 11
+         console.log(counter(-5)); // 6
+
+         /////////
+         console.log("\n👇👇 another counter with initial value = 10");
+
+         const counter10 = counterMaker(10); // with initial value
+
+         console.log(counter10()); // 10
+         console.log(counter10()); // 10
+         console.log(counter10(1)); // 11
+         console.log(counter10()); // 11
+         console.log(counter10(3)); // 14
+         console.log(counter10(7)); // 21
+         console.log(counter10(-5)); // 16
+      </script>
+   </body>
+</html>
