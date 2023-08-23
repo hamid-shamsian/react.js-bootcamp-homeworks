@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@300;500;900&display=swap");
+
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+html {
+   font-size: 62.5%;
+}
+
+body {
+   font-family: Inter, sans-serif;
+}
+
+.container {
+   width: 800px;
+   margin: 0 auto;
+   text-align: center;
+}
+
+h1 {
+   font-size: 2.4rem;
+}
+
+h2 {
+   font-size: 2rem;
+   margin-bottom: 3rem;
+}
+
+h3 {
+   font-size: 1.4rem;
+   color: #333;
+   margin-bottom: 3rem;
+}
+
+.tagline {
+   font-size: 1.3rem;
+   margin: 3rem 0;
+}
+
+header,
+.features {
+   background-color: #333;
+   color: #fff;
+}
+
+header {
+   padding: 5rem 0;
+}
+
+header .container {
+   padding: 0 10rem;
+}
+
+button {
+   border: 2px solid #fff;
+   border-radius: 5px;
+   background-color: #0000;
+   padding: 1.5rem 2.5rem;
+   color: inherit;
+   font-size: 1.4rem;
+   font-weight: 700;
+   cursor: pointer;
+   transition: all 0.3s;
+}
+
+button:hover {
+   color: #333;
+   background-color: #eaeaea;
+}
+
+.info {
+   background-color: #eaeaea;
+   color: #333;
+   padding: 3rem 0 6rem;
+}
+
+.info p,
+.features p {
+   font-size: 1.5rem;
+}
+
+.flex {
+   display: flex;
+}
+
+.info .flex {
+   gap: 4rem;
+}
+
+.features {
+   padding: 2.5rem 0;
+}
+
+.features .container {
+   padding: 0 6rem;
+}
+
+.features .container div {
+   background-color: #fff;
+   margin: 0 0.8rem;
+   padding: 3rem 1.5rem;
+   color: #000;
+}
+
+.cta {
+   padding: 3.5rem 0;
+}
+
+.cta h2 {
+   color: #333;
+}
+
+.cta p {
+   color: #000;
+   font-size: 1.6rem;
+}
+
+.contact div {
+   flex: 1 1 10rem;
+   padding: 4.5rem;
+   text-align: center;
+   color: #fff;
+}
+
+.contact div:first-child {
+   background-color: #2690d4;
+}
+
+.contact div:last-child {
+   background-color: #333;
+}
+
+.contact p {
+   font-size: 1.6rem;
+}
+
+.email {
+   margin-top: 3.6rem;
+}
+
+footer {
+   background-color: #000;
+   color: #fff;
+   padding: 2rem 0;
+}
+
+footer p {
+   flex: 1 1 10rem;
+   text-align: center;
+   font-size: 2rem;
+}
+
+footer span {
+   color: #2690d4;
+}
+
+@media screen and (max-width: 900px) {
+   .container {
+      width: 90%;
+   }
+}
+
+@media screen and (max-width: 768px) {
+   header .container,
+   .features .container {
+      padding: 0;
+   }
+}
+
+@media screen and (max-width: 700px) {
+   html {
+      font-size: 50%;
+   }
+}
+
+@media screen and (max-width: 560px) {
+   .flex {
+      flex-direction: column;
+   }
+   .features .container div {
+      margin: 0.8rem 4rem;
+   }
+   .contact {
+      margin: 2rem;
+   }
+   footer {
+      padding: 0;
+   }
+   footer p {
+      flex-basis: 2rem;
+      padding: 1rem;
+   }
+   footer p:last-child {
+      border-top: 1px solid #333;
+   }
+}
