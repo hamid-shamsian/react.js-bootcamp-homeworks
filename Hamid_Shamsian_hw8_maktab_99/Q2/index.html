@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Question 2</title>
+      <style>
+         body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+         }
+      </style>
+   </head>
+   <body>
+      <script>
+         const elemCreator = (elemType, callback) => {
+            const element = document.createElement(elemType);
+            document.body.append(element);
+            callback(element);
+         };
+
+         const manipulateElement = element => {
+            element.style.cssText = `
+               background-color: red;
+               width: 100px;
+               height: 100px;
+               border-radius: 50%;`;
+         };
+
+         elemCreator("div", manipulateElement);
+      </script>
+   </body>
+</html>
