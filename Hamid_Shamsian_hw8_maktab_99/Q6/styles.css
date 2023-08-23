@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@300;500;900&display=swap");
+
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+html {
+   font-size: 62.5%;
+}
+
+body {
+   font-family: "Inter", sans-serif;
+   padding: 3rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 2.7rem;
+   min-height: 100vh;
+   position: relative;
+}
+
+.circle {
+   width: 17.5rem;
+   height: 17.5rem;
+   background: #007cef;
+   position: absolute;
+   transition: all 0.5s;
+}
+
+.circle:first-of-type {
+   border-bottom-left-radius: 17.5rem;
+   top: 0;
+   right: 0;
+}
+
+.circle:last-of-type {
+   border-top-right-radius: 17.5rem;
+   bottom: 0;
+   left: 0;
+}
+
+.circle:hover {
+   width: 20rem;
+   height: 20rem;
+}
+
+.card {
+   width: 28rem;
+   height: 35rem;
+   background-color: #fff;
+   box-shadow: 0px 3px 7px 2px rgba(0, 0, 0, 0.15);
+   border-radius: 4px;
+   text-align: center;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   padding: 2.5rem;
+   position: relative;
+   cursor: pointer;
+   z-index: 1;
+}
+
+.card:hover .badge {
+   background-color: #ccc;
+}
+
+.card h2 {
+   font-size: 2.4rem;
+   margin: 2.5rem 0;
+}
+
+.card p {
+   font-size: 1.5rem;
+}
+
+.badge {
+   font-size: 2.4rem;
+   font-weight: 700;
+   width: 8rem;
+   height: 8rem;
+   border-radius: 50%;
+   background-color: #fff;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border: 1px solid #ddd;
+   position: absolute;
+   top: -4rem;
+   transition: all 0.5s;
+}
+
+@media screen and (max-width: 810px) {
+   body {
+      flex-direction: column;
+   }
+   .card {
+      margin: 3rem;
+   }
+}
