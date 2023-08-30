@@ -1,0 +1,14 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+
+@font-face {
+   font-family: IranSans;
+   src: url("http://mincdn.ir/font/IranSans/IRANSansWeb_Light.woff");
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.hidden-scrollbar::-webkit-scrollbar {
+   display: none;
+}

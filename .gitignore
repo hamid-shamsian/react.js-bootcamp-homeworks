@@ -1,3 +1,5 @@
+**/node_modules/
+
 *.jpg
 *.pdf
 *.png
@@ -5,3 +7,4 @@
 *.ttf
 *.svg
 *.fig
+*.webp
