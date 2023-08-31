@@ -12,3 +12,47 @@
 .hidden-scrollbar::-webkit-scrollbar {
    display: none;
 }
+
+.btn {
+   @apply px-4 py-3 rounded-md transition-all duration-300 hover:bg-gray-200 hover:text-black;
+}
+
+.tag {
+   @apply ml-2 px-4 py-1.5 border border-gray-200 rounded-full flex items-center;
+}
+
+.fade {
+   @apply from-white to-transparent fixed h-10 xs:h-12;
+}
+
+.filter__item {
+   @apply flex items-center cursor-pointer;
+}
+
+.icon-link {
+   @apply cursor-pointer transition-all duration-300 hover:text-black;
+}
+
+.footer__item {
+   @apply flex flex-col items-center;
+}
+
+.product__card {
+   @apply border rounded-md p-4 flex justify-between gap-5 cursor-pointer;
+}
+
+.product__info {
+   @apply flex flex-col justify-between flex-1;
+}
+
+.product__title {
+   @apply font-bold text-lg lg:text-base;
+}
+
+.product__desc {
+   @apply text-gray-400 text-sm xs:text-base lg:text-sm;
+}
+
+.cat__item {
+   @apply flex items-center my-3 cursor-pointer transition-all duration-300 hover:text-black;
+}

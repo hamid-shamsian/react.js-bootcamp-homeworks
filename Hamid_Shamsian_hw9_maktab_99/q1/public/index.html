@@ -14,12 +14,8 @@
                <div class="w-24 px-4 border-l">
                   <img src="images/logo.svg" alt="logo" class="w-full" />
                </div>
-               <button class="flex items-center mr-3 px-4 py-3 rounded-md transition-all duration-300 hover:bg-gray-200 hover:text-black">
-                  <i class="fa fa-lg fa-map-marker ml-3"></i><span>تهران</span>
-               </button>
-               <button class="flex items-center mr-3 px-4 py-3 rounded-md transition-all duration-300 hover:bg-gray-200 hover:text-black">
-                  <span>دسته ها</span><i class="fa fa-lg fa-angle-down mr-3"></i>
-               </button>
+               <button class="flex items-center mr-3 btn"><i class="fa fa-lg fa-map-marker ml-3"></i><span>تهران</span></button>
+               <button class="flex items-center mr-3 btn"><span>دسته ها</span><i class="fa fa-lg fa-angle-down mr-3"></i></button>
             </div>
 
             <div class="flex items-center bg-gray-200 p-3 m-4 rounded-md lg:flex-1 lg:m-3 xl:ml-44">
@@ -34,25 +30,19 @@
             </div>
 
             <div class="flex border py-2 overflow-x-scroll hidden-scrollbar whitespace-nowrap cursor-pointer relative lg:hidden">
-               <span class="ml-2 mr-4 px-4 py-1.5 border border-gray-200 rounded-full flex items-center"
-                  ><i class="fa fa-sliders ml-2"></i>فیلترها</span
-               >
-               <span class="ml-2 px-4 py-1.5 border border-gray-200 rounded-full flex items-center"><i class="fa fa-list-ul ml-2"></i>دسته ها</span>
+               <span class="mr-4 tag"><i class="fa fa-sliders ml-2"></i>فیلترها</span>
+               <span class="tag"><i class="fa fa-list-ul ml-2"></i>دسته ها</span>
                <div id="tags" class="flex"></div>
                <span class="ml-10 px-4 py-1.5 border border-gray-200 rounded-full">اجاره آپارتمان</span>
 
-               <span class="bg-gradient-to-r from-white to-transparent fixed left-0 w-20 h-10 xs:h-12"></span>
-               <span class="bg-gradient-to-l from-white to-transparent fixed right-0 w-8 h-10 xs:h-12"></span>
+               <span class="bg-gradient-to-r fade left-0 w-20"></span>
+               <span class="bg-gradient-to-l fade right-0 w-8"></span>
             </div>
 
             <div class="hidden lg:flex">
-               <button class="flex items-center px-4 py-3 rounded-md transition-all duration-300 hover:bg-gray-200 hover:text-black">
-                  <i class="fa fa-user-o ml-3"></i><span>دیوار من</span>
-               </button>
-               <button class="flex items-center mr-3 px-4 py-3 rounded-md transition-all duration-300 hover:bg-gray-200 hover:text-black">
-                  <i class="fa fa-comment-o ml-3"></i><span>چت</span>
-               </button>
-               <button class="mr-3 px-4 py-3 rounded-md transition-all duration-300 hover:bg-gray-200 hover:text-black">پشتیبانی</button>
+               <button class="flex items-center btn"><i class="fa fa-user-o ml-3"></i><span>دیوار من</span></button>
+               <button class="flex items-center mr-3 btn"><i class="fa fa-comment-o ml-3"></i><span>چت</span></button>
+               <button class="mr-3 btn">پشتیبانی</button>
                <button class="mx-4 px-4 py-3 rounded-md transition-all duration-300 bg-red-800 text-white hover:bg-red-700">ثبت آگهی</button>
             </div>
          </nav>
@@ -65,35 +55,35 @@
                <ul id="cats" class="text-gray-500 text-base"></ul>
             </section>
             <hr class="my-4" />
-            <section class="flex items-center cursor-pointer">
+            <section class="filter__item">
                <i class="fa fa-lg fa-angle-down ml-3 text-gray-500"></i>
                <h2>محل</h2>
             </section>
             <hr class="my-4" />
-            <section class="flex items-center cursor-pointer">
+            <section class="filter__item">
                <i class="fa fa-lg fa-angle-down ml-3 text-gray-500"></i>
                <h2>قیمت</h2>
             </section>
             <hr class="my-4" />
-            <section class="flex items-center cursor-pointer">
+            <section class="filter__item">
                <i class="fa fa-lg fa-angle-down ml-3 text-gray-500"></i>
                <h2>وضعیت آگهی</h2>
             </section>
             <hr class="my-4" />
 
             <ul class="flex gap-4 flex-wrap text-gray-500">
-               <li class="cursor-pointer transition-all duration-300 hover:text-black">دربارهٔ دیوار</li>
-               <li class="cursor-pointer transition-all duration-300 hover:text-black">دریافت برنامه</li>
-               <li class="cursor-pointer transition-all duration-300 hover:text-black">بلاگ دیوار</li>
-               <li class="cursor-pointer transition-all duration-300 hover:text-black">کسب‌وکارها</li>
-               <li class="cursor-pointer transition-all duration-300 hover:text-black">پشتیبانی و قوانین</li>
+               <li class="icon-link">دربارهٔ دیوار</li>
+               <li class="icon-link">دریافت برنامه</li>
+               <li class="icon-link">بلاگ دیوار</li>
+               <li class="icon-link">کسب‌وکارها</li>
+               <li class="icon-link">پشتیبانی و قوانین</li>
             </ul>
 
             <ul class="flex justify-around px-14 my-7 text-gray-500">
-               <li><i class="fa fa-2x fa-twitter cursor-pointer transition-all duration-300 hover:text-black"></i></li>
-               <li><i class="fa fa-2x fa-instagram cursor-pointer transition-all duration-300 hover:text-black"></i></li>
-               <li><i class="fa fa-2x fa-linkedin-square cursor-pointer transition-all duration-300 hover:text-black"></i></li>
-               <li><i class="fa fa-2x fa-youtube-play cursor-pointer transition-all duration-300 hover:text-black"></i></li>
+               <li><i class="fa fa-2x fa-twitter icon-link"></i></li>
+               <li><i class="fa fa-2x fa-instagram icon-link"></i></li>
+               <li><i class="fa fa-2x fa-linkedin-square icon-link"></i></li>
+               <li><i class="fa fa-2x fa-youtube-play icon-link"></i></li>
             </ul>
 
             <ul class="flex gap-2 justify-end my-10 pr-10">
@@ -114,23 +104,23 @@
       <footer
          class="fixed bottom-0 left-0 right-0 bg-white p-2 flex justify-around items-end text-gray-500 shadow-2xl shadow-black border-t text-sm sm:text-base lg:hidden"
       >
-         <div class="flex flex-col items-center">
+         <div class="footer__item">
             <img src="images/logo.svg" alt="logo" />
             <span>آگهی ها</span>
          </div>
-         <div class="flex flex-col items-center">
+         <div class="footer__item">
             <i class="fa fa-list-ul mb-2"></i>
             <span>دسته ها</span>
          </div>
-         <div class="flex flex-col items-center">
+         <div class="footer__item">
             <i class="fa fa-plus-circle mb-2"></i>
             <span>ثبت آگهی</span>
          </div>
-         <div class="flex flex-col items-center">
+         <div class="footer__item">
             <i class="fa fa-comment mb-2"></i>
             <span>چت</span>
          </div>
-         <div class="flex flex-col items-center">
+         <div class="footer__item">
             <i class="fa fa-user mb-2"></i>
             <span>دیوار من</span>
          </div>

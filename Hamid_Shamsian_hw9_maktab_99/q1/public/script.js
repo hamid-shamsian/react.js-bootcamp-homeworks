@@ -7,10 +7,10 @@ const catsContainer = document.querySelector("#cats");
 products.forEach(p =>
    productsContainer.insertAdjacentHTML(
       "beforeend",
-      `<div class="border rounded-md p-4 flex justify-between gap-5 cursor-pointer">
-         <div class="flex flex-col justify-between flex-1">
-            <h3 class="font-bold text-lg lg:text-base">${p.title}</h3>
-            <div class="text-gray-400 text-sm xs:text-base lg:text-sm">
+      `<div class="product__card">
+         <div class="product__info">
+            <h3 class="product__title">${p.title}</h3>
+            <div class="product__desc">
                <p>${p.tagline}</p>
                <p>${p.price} تومان</p>
                <p>${p.date}</p>
@@ -24,12 +24,12 @@ products.forEach(p =>
    )
 );
 
-tags.forEach(t => tagsContainer.insertAdjacentHTML("beforeend", `<span class="ml-2 px-4 py-1.5 border border-gray-200 rounded-full">${t}</span>`));
+tags.forEach(t => tagsContainer.insertAdjacentHTML("beforeend", `<span class="tag">${t}</span>`));
 
 cats.forEach(c =>
    catsContainer.insertAdjacentHTML(
       "beforeend",
-      `<li class="flex items-center my-3 cursor-pointer transition-all duration-300 hover:text-black">
+      `<li class="cat__item">
          <i class="fa fa-lg fa-fw fa-${c.icon} ml-3"></i>${c.title}
       </li>`
    )
