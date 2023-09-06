@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&display=swap");
+@import "main.css";
+
+.text-shadow {
+   text-shadow: 0 2px 5px #0004;
+}
+
+body {
+   font-family: Poppins;
+}
+
+form {
+   font-family: Outfit;
+}
+
+input {
+   outline: 0;
+}
+
+::placeholder {
+   color: #a0a0a0;
+}
+
+.social-links img {
+   width: 40px;
+   height: 40px;
+}
+
+.image-decoration {
+   left: 20%;
+   bottom: 5%;
+   transform: rotate(-7deg);
+}
+
+.logo {
+   width: 60px;
+}
+
+@media (min-width: 992px) {
+   html {
+      font-size: 70%;
+   }
+   .social-links img {
+      width: 20px;
+      height: 20px;
+   }
+}

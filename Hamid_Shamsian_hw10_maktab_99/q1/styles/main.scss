@@ -1,0 +1,19 @@
+// Custom variables:
+
+$primary: #B1D9DB;
+$secondary: #5EC5C8;
+$light: #ECE9EC;
+$border-radius-pill: 3rem;
+// $enable-shadows: true;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1325px,  // <= edited
+  xxl: 1400px
+);
+
+// //////////////////////////////////
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
