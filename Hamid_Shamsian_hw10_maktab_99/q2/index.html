@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link
+         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+         rel="stylesheet"
+         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+         crossorigin="anonymous"
+      />
+      <title>Question 2</title>
+   </head>
+
+   <body data-bs-theme="dark">
+      <!-- main -->
+      <div class="container vh-100 d-flex justify-content-center align-items-center">
+         <div class="row d-flex justify-content-center">
+            <div class="col-12 col-md-6 col-lg-4">
+               <div class="card text-center shadow-lg">
+                  <img class="card-img-top" src="image.jpg" alt="decoration" />
+                  <div class="card-body">
+                     <h5 class="card-title mb-4">BMI Calculator</h5>
+                     <form>
+                        <div class="input-group mb-3 font-monospace">
+                           <span class="input-group-text">Weight</span>
+                           <input id="weight" type="number" min="0" class="form-control" />
+                           <span class="input-group-text">KG</span>
+                        </div>
+                        <div class="input-group font-monospace">
+                           <span class="input-group-text">Height</span>
+                           <input id="height" type="number" min="0" class="form-control" />
+                           <span class="input-group-text">CM</span>
+                        </div>
+                        <button id="calcBtn" type="button" class="btn btn-primary mt-4" data-bs-toggle="modal" data-bs-target="#resultModal">
+                           Calculate
+                        </button>
+                     </form>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- result modal -->
+      <div class="modal fade" id="resultModal">
+         <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Result</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+               </div>
+               <div id="result" class="modal-body text-center"></div>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <script
+         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+         crossorigin="anonymous"
+      ></script>
+      <script src="script.js"></script>
+   </body>
+</html>
