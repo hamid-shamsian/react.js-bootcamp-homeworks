@@ -113,3 +113,134 @@ class NonPolygon extends Shape {
 const nonPolygon = new NonPolygon("my non-polygon", 10);
 
 console.log(nonPolygon.calcArea());
+
+// >>>>>>>>>>>>>>>>>>>>> derived classes from polygon <<<<<<<<<<<<<<<<<<<<<<<<
+
+// square:
+class Square extends Polygon {
+  constructor(shapeName, width) {
+    super(shapeName, 4, width);
+  }
+
+  get width() {
+    return this.oneSideLength;
+  }
+
+  set width(w) {
+    if (typeof w !== "number" || isNaN(w)) throw new TypeError("invalid square width.");
+    this.oneSideLength = w;
+  }
+
+  calcPerimeter() {
+    return super.calcPerimeter();
+  }
+
+  calcArea() {
+    return super.calcArea();
+  }
+}
+
+const square = new Square("my square", 15);
+
+console.log(square.width);
+square.width = 10;
+console.log(square.width);
+// square.width = [];
+
+console.log(square.calcPerimeter());
+console.log(square.calcArea());
+
+// rectangle:
+class Rectangle extends Polygon {
+  #width;
+  #height;
+
+  constructor(shapeName, width, height) {
+    super(shapeName);
+    this.#width = width;
+    this.#height = height;
+  }
+
+  get width() {
+    return this.#width;
+  }
+
+  set width(w) {
+    if (typeof w !== "number" || isNaN(w)) throw new TypeError("invalid rectangle width.");
+    this.#width = w;
+  }
+
+  get height() {
+    return this.#height;
+  }
+
+  set height(h) {
+    if (typeof h !== "number" || isNaN(h)) throw new TypeError("invalid rectangle height.");
+    this.#height = h;
+  }
+
+  calcPerimeter() {
+    return (this.#width + this.#height) * 2;
+  }
+
+  calcArea() {
+    return this.#width * this.#height;
+  }
+}
+
+// >>>>>>>>>>>>>>>>>>>>> derived classes from non-polygon <<<<<<<<<<<<<<<<<<<<<<<<
+
+// circle:
+class Circle extends NonPolygon {
+  constructor(shapeName, radius) {
+    super(shapeName, radius);
+  }
+
+  calcPerimeter() {
+    return 2 * Math.PI * this.radius;
+  }
+
+  calcArea() {
+    return Math.PI * this.radius ** 2;
+  }
+}
+
+const circle = new Circle("my circle", 5);
+
+console.log(circle.radius);
+circle.radius = 10;
+console.log(circle.radius);
+
+console.log(circle.calcArea());
+
+// cylinder:
+class Cylinder extends Circle {
+  #height;
+
+  constructor(shapeName, radius, height) {
+    super(shapeName, radius);
+    this.#height = height;
+  }
+
+  get height() {
+    return this.#height;
+  }
+
+  set height(h) {
+    if (typeof h !== "number" || isNaN(h)) throw new TypeError("invalid cylinder height.");
+    this.#height = h;
+  }
+
+  calcArea() {
+    return this.calcPerimeter() * this.height + 2 * super.calcArea(); // calcArea method of Circle class
+  }
+
+  calcVolume() {
+    return super.calcArea() * this.height; // calcArea method of Circle class
+  }
+}
+
+const cylinder = new Cylinder("dd", 10, 10);
+
+console.log(cylinder.calcArea());
+console.log(cylinder.calcVolume());
