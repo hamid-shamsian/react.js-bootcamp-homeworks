@@ -1,4 +1,4 @@
-// abstract class of Shape:
+// >>>>>>>>>>>>>>>>>>>>> abstract class of Shape <<<<<<<<<<<<<<<<<<<<<<
 
 class Shape {
   #shapeName;
@@ -26,8 +26,9 @@ class Shape {
   }
 }
 
-// derived classes:
+// >>>>>>>>>>>>>>>>>>>>> derived classes <<<<<<<<<<<<<<<<<<<<<<<<<<
 
+// polygon:
 class Polygon extends Shape {
   #sidesCount;
   #oneSideLength;
@@ -36,6 +37,24 @@ class Polygon extends Shape {
     super(shapeName);
     this.#sidesCount = sidesCount;
     this.#oneSideLength = oneSideLength;
+  }
+
+  get sidesCount() {
+    return this.#sidesCount;
+  }
+
+  set sidesCount(n) {
+    if (typeof n !== "number" || isNaN(n)) throw new TypeError("invalid number of sides.");
+    this.#sidesCount = n;
+  }
+
+  get oneSideLength() {
+    return this.#oneSideLength;
+  }
+
+  set oneSideLength(l) {
+    if (typeof l !== "number" || isNaN(l)) throw new TypeError("invalid length of one side.");
+    this.#oneSideLength = l;
   }
 
   calcPerimeter() {
@@ -55,3 +74,9 @@ console.log(polygon.calcArea());
 console.log(polygon.shapeName);
 polygon.shapeName = "his polygon";
 console.log(polygon.shapeName);
+
+// polygon.oneSideLength = "a";
+polygon.sidesCount = 10;
+console.log(polygon.sidesCount);
+console.log(polygon.calcPerimeter());
+console.log(polygon.calcArea());
