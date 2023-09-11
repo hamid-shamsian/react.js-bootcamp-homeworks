@@ -80,3 +80,36 @@ polygon.sidesCount = 10;
 console.log(polygon.sidesCount);
 console.log(polygon.calcPerimeter());
 console.log(polygon.calcArea());
+
+// non-polygon:
+class NonPolygon extends Shape {
+  #radius;
+  #message =
+    "this is a non-polygon shape without any furthur specifications. plz derive a more specific non-polygon class from the class of this object.";
+
+  constructor(shapeName, radius) {
+    super(shapeName);
+    this.#radius = radius;
+  }
+
+  get radius() {
+    return this.#radius;
+  }
+
+  set radius(r) {
+    if (typeof r !== "number" || isNaN(r)) throw new TypeError("invalid radius.");
+    this.#radius = r;
+  }
+
+  calcPerimeter() {
+    return this.#message;
+  }
+
+  calcArea() {
+    return this.#message;
+  }
+}
+
+const nonPolygon = new NonPolygon("my non-polygon", 10);
+
+console.log(nonPolygon.calcArea());
