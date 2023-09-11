@@ -81,7 +81,7 @@ console.log(polygon.sidesCount);
 console.log(polygon.calcPerimeter());
 console.log(polygon.calcArea());
 
-// non-polygon:
+// non-polygon:  ----------------------------------------------------------------------
 class NonPolygon extends Shape {
   #radius;
   #message =
@@ -150,7 +150,7 @@ console.log(square.width);
 console.log(square.calcPerimeter());
 console.log(square.calcArea());
 
-// rectangle:
+// rectangle:  ----------------------------------------------------------------------
 class Rectangle extends Polygon {
   #width;
   #height;
@@ -213,7 +213,7 @@ console.log(circle.radius);
 
 console.log(circle.calcArea());
 
-// cylinder:
+// cylinder:  ----------------------------------------------------------------------
 class Cylinder extends Circle {
   #height;
 
