@@ -98,6 +98,10 @@ function changePage(e) {
 
   pagesDiv.children[currentPage].classList.add("active");
 
+  const url = new URL(location);
+  url.searchParams.set("page", currentPage);
+  history.pushState({}, "", url);
+
   renderTodos();
 }
 // =========================================================================================
