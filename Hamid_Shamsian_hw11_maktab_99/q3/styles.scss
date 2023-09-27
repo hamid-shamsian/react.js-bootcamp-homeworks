@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+@mixin flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-col {
+  flex-direction: column;
+  gap: 5rem;
+  flex: 1 1 1rem;
+}
+
+@mixin btn {
+  border-radius: 5rem;
+  font-size: 2.4rem;
+  padding: 2rem 7rem;
+  color: #fff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> remember reseting to 62.5
+  font-size: 62.5%;
+}
+
+body {
+  @include flex();
+  font-family: Montserrat;
+  height: 100vh;
+}
+
+.container {
+  width: 120rem;
+  @include flex();
+  align-items: stretch;
+  border-radius: 2rem;
+  box-shadow: 2px 3px 10px 3px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+.cta {
+  @include flex();
+  @include flex-col();
+  background: linear-gradient(91deg, #ff4b2b 0.51%, #ff416c 99.42%);
+  padding: 8rem;
+  text-align: center;
+  color: #fff;
+
+  .cta__heading {
+    font-size: 3.5rem;
+    font-weight: 700;
+  }
+
+  .cta__tagline {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  .cta__btn--outline {
+    @include btn();
+    background-color: transparent;
+    border: 1px solid #fff;
+    cursor: pointer;
+  }
+}
+
+.main {
+  @include flex();
+  @include flex-col();
+  gap: 3rem;
+  padding: 8rem;
+  text-align: center;
+
+  .main__heading {
+    font-size: 3.5rem;
+    font-weight: 700;
+  }
+
+  .main__icons {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .main__icon {
+    @include flex();
+    border: 1px solid #d4cece;
+    width: 7rem;
+    height: 7rem;
+    padding: 1rem;
+    border-radius: 50%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .main__tagline {
+    font-size: 1.5rem;
+  }
+
+  .main__input {
+    width: 100%;
+    background-color: #eee;
+    border: 0;
+    outline: 0;
+    padding: 1rem 2rem;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+  }
+
+  .main__forgot {
+    font-size: 2rem;
+    margin: 1rem 0;
+  }
+
+  .main__btn {
+    @include btn();
+    background-color: #ff4b2b;
+    border: 0;
+    margin-top: 2rem;
+  }
+}
+
+.none {
+  display: none;
+}
