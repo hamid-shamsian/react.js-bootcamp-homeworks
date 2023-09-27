@@ -1,0 +1,25 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css");
+@import url("https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css");
+
+form,
+.card {
+  max-width: 700px;
+}
+
+main {
+  padding-top: 90px;
+}
+
+.card i {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover i {
+  transform: rotateZ(15deg);
+}
+
+.page-item {
+  cursor: pointer;
+}
