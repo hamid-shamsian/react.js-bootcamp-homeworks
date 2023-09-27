@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background-color: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      button {
+        padding: 10px 20px;
+        border: 5px solid white;
+        border-radius: 30px;
+        background-color: green;
+        font-size: 20px;
+        font-weight: 900;
+        color: white;
+        text-shadow: 0 0 5px black;
+        cursor: pointer;
+      }
+    </style>
+    <title>Question 6</title>
+  </head>
+  <body>
+    <button>LOGIN</button>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script>
+      let flag = false;
+      $(() =>
+        $("button").on("click", function () {
+          flag = !flag;
+          $(this).text(flag ? "LOGOUT" : "LOGIN");
+          $(this).css("background-color", flag ? "red" : "green");
+        })
+      );
+    </script>
+  </body>
+</html>
