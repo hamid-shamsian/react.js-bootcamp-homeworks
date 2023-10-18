@@ -1,0 +1,57 @@
+q1:
+
+  > A library in javascript is a collection of pre-written functions or modules that provide specific functionalities. developers
+  can selectively use these functions in their applications. for example: the Lodash library provides utility functions like 
+  sorting arrays or manipulating strings.
+  > But a framework in javascript is a more comprehensive structure that includes libraries, tools, and conventions to build 
+  applications. it dictates the overall architecture and flow of an application. developers must follow the framework structure 
+  and conventions. an example is AngularJS, which provides a complete framework for building dynamic web applications.
+  > Libraries offer flexibility and allow developers to extend or modify their functionality. for example: the Axios library 
+  provides an easy way to make HTTP requests and can be customized with interceptors for authentication or error handling.
+  
+  > React is a popular library that provides a component-based architecture for building user interfaces. developers provide 
+  components and let React handle rendering and updating the UI. in some places though, React is considered as a framework because
+  of its power and influence.
+
+===================================================================================================================================
+
+q2:
+
+  Declarative Paradigm
+  Reusable components
+  Comes with jsx
+  Faster rendering
+  Stable code structure
+  Virtual DOM
+  Easy to learn
+  Performance
+  React flexibility
+  Strong community support
+  Easy debugging
+  React has a steep learning curve
+  Faster development
+  Helpful developer toolset
+  React Native for mobile app development
+
+===================================================================================================================================
+
+q3:
+
+  JSX is a HTML-like markup stuff used in react components render section and the purpose of using them is to improve readability
+  and maintainability of components; also JSX makes it easy to see the structure and hierarchy of our components, as well as the 
+  props and state that they rely on. This can make it easier to understand and maintain our code, especially as our application 
+  grows in complexity. It provides a more readable and intuitive way to write component code by allowing developers to mix HTML-like tags
+  and JavaScript expressions within the same file. This makes it easier for developers, including learners, to understand and work with
+  React components.
+  and the last point is that JSX is not a requirement for using React. it only simplifies creating Virtual DOM elements that was used to
+  be created using React.createElement method.
+
+===================================================================================================================================
+
+q4:
+
+  Components are independent and reusable bits of code. They usually represent a self-contained and independent part of the UI in the page.
+  They serve the same purpose as JavaScript functions, but work in isolation and return HTML. they usually have some state containing the
+  current situation and state of the component; and also they can give a props object containing the data that is passed to from parent 
+  component indicating the initial configuration of the component.
+  Components come in two types, Class-based components and Functional components.
