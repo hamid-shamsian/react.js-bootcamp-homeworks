@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+    <title>Todo App</title>
+  </head>
+
+  <body data-bs-theme="dark">
+    <!-- add or edit page -->
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-md bg-body-tertiary px-md-4">
+      <div class="container-fluid">
+        <a class="navbar-brand me-5" href="#">
+          Todo App
+          <img src="images/todo.png" alt="Logo" width="70" />
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item me-4">
+              <a class="nav-link active" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="todos.html">Todos</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <h3 class="text-center mt-5" id="pageTitle"></h3>
+
+    <!-- form -->
+    <div class="container mt-5 d-flex justify-content-center">
+      <form class="w-100">
+        <label for="title" class="form-label">Title *</label>
+        <input name="title" type="text" id="title" class="form-control" placeholder="What will you do today?" required />
+
+        <label for="desc" class="form-label mt-4">Description</label>
+        <textarea name="description" id="desc" class="form-control" placeholder="Some information..."></textarea>
+
+        <label for="date" class="form-label mt-4">Due Date *</label>
+        <input name="dueDate" type="date" id="date" class="form-control" required />
+
+        <button type="submit" class="btn btn-primary form-control mt-5"></button>
+      </form>
+    </div>
+
+    <script src="js/index.js" type="module"></script>
+  </body>
+</html>

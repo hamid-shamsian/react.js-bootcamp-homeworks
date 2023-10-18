@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Question 3</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        background-color: #333;
+        color: #fff;
+      }
+      table {
+        border-collapse: collapse;
+        text-align: left;
+      }
+      th,
+      td {
+        padding: 10px 30px;
+      }
+      .even {
+        background-color: #444;
+      }
+      .odd {
+        background-color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr class="odd">
+          <th>Column 1</th>
+          <th>Column 2</th>
+          <th>Column 3</th>
+        </tr>
+      </thead>
+      <tbody id="striped-table"></tbody>
+    </table>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script>
+      $(function () {
+        const table = $("#striped-table");
+
+        for (let i = 0; i < 8; i++) {
+          const row = $("<tr>");
+
+          for (let j = 1; j <= 3; j++) {
+            const cell = $("<td>Row " + (i + 1) + ", Column " + j + "</td>");
+            row.append(cell);
+          }
+
+          table.append(row);
+
+          if (i % 2 === 0) row.addClass("even");
+          else row.addClass("odd");
+        }
+      });
+    </script>
+  </body>
+</html>
