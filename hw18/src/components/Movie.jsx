@@ -11,19 +11,19 @@ const Movie = ({ movie, onDelete, onEdit }) => {
           <tbody>
             {desc && (
               <tr>
-                <th className='font-normal text-gray-600 align-top'>Description</th>
+                <th className='font-normal text-gray-600 pr-5 align-top'>Description</th>
                 <td>{desc}</td>
               </tr>
             )}
             {year && (
               <tr>
-                <th className='font-normal text-gray-600 whitespace-nowrap pr-5'>Release Year</th>
+                <th className='font-normal text-gray-600 pr-5 whitespace-nowrap'>Release Year</th>
                 <td>{year}</td>
               </tr>
             )}
             {rating && (
               <tr>
-                <th className='font-normal text-gray-600'>Rating</th>
+                <th className='font-normal text-gray-600 pr-5'>Rating</th>
                 <td>{rating}</td>
               </tr>
             )}
@@ -33,16 +33,16 @@ const Movie = ({ movie, onDelete, onEdit }) => {
 
       {genre && <span className='absolute right-20 -bottom-3 bg-yellow-300 py-1 px-3 rounded-full'>{genre}</span>}
       <button
-        className='p-3 rounded-full bg-red-600 w-7 h-7 flex justify-center items-center text-white absolute top-3 -right-3'
+        className='rounded-full bg-red-600 w-7 h-7 flex justify-center items-center text-white absolute top-3 -right-3'
         onClick={() => onDelete(movie)}
       >
-        X
+        <i className='fa fa-trash fa-xs'></i>
       </button>
       <button
-        className='p-3 rounded-full bg-blue-500 w-7 h-7 flex justify-center items-center text-white absolute top-12 -right-3'
+        className='rounded-full bg-blue-500 w-7 h-7 flex justify-center items-center text-white absolute top-12 -right-3'
         onClick={() => onEdit(movie)}
       >
-        E
+        <i className='fa fa-pen fa-xs'></i>
       </button>
     </div>
   );
