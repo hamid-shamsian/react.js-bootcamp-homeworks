@@ -1,12 +1,14 @@
 import { useState } from "react";
 import MovieForm from "./components/MovieForm";
 import Movie from "./components/Movie";
+import DeleteModal from "./components/DeleteModal";
 import data from "./data.json";
 
 const App = () => {
   const [movies, setMovies] = useState(data.movies);
   const [movieUnderAction, setMovieUnderAction] = useState(null);
   const [showForm, setShowForm] = useState(false);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
 
   const handleSubmitMovie = movie => {
     if (movieUnderAction) {
@@ -22,7 +24,16 @@ const App = () => {
     setShowForm(false);
   };
 
-  const handleDelete = movie => setMovies(prevMovies => prevMovies.filter(m => m !== movie));
+  const handleDelete = movie => {
+    setMovieUnderAction(movie);
+    setShowDeleteModal(true);
+  };
+
+  const handleDoDelete = () => {
+    setMovies(prevMovies => prevMovies.filter(m => m !== movieUnderAction));
+    setMovieUnderAction(null);
+    setShowDeleteModal(false);
+  };
 
   const handleEdit = movie => {
     setMovieUnderAction(movie);
@@ -32,6 +43,7 @@ const App = () => {
   const handleCancel = () => {
     setMovieUnderAction(null);
     setShowForm(false);
+    setShowDeleteModal(false);
   };
 
   return (
@@ -49,6 +61,7 @@ const App = () => {
       </button>
 
       {showForm && <MovieForm editingMovie={movieUnderAction} onSubmitMovie={handleSubmitMovie} onCancel={handleCancel} />}
+      {showDeleteModal && <DeleteModal deletingMovie={movieUnderAction} onDoDelete={handleDoDelete} onCancel={handleCancel} />}
     </div>
   );
 };
