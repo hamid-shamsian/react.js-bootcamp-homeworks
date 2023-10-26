@@ -46,12 +46,16 @@ const App = () => {
     setShowDeleteModal(false);
   };
 
+  const handleWatch = movie => {
+    setMovies(prevMovies => prevMovies.map(m => (m === movie ? { ...movie, watched: !movie.watched } : m)));
+  };
+
   return (
     <div className='container mx-auto flex flex-col gap-10 px-6 py-10 max-w-xl'>
       <h1 className='font-bold text-xl text-center'>Movies Catalog</h1>
 
       {movies.length ? (
-        movies.map(m => <Movie key={m.id} movie={m} onDelete={handleDelete} onEdit={handleEdit} />)
+        movies.map(m => <Movie key={m.id} movie={m} onDelete={handleDelete} onEdit={handleEdit} onWatch={handleWatch} />)
       ) : (
         <p className='text-center'>There are no Movies in your List!</p>
       )}

@@ -6,7 +6,8 @@
       "genre": "Drama",
       "year": 2019,
       "rating": 3.4,
-      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, recusandae"
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, recusandae",
+      "watched": true
     },
     {
       "id": 2,
@@ -22,7 +23,8 @@
       "genre": "Drama",
       "year": 2021,
       "rating": 2,
-      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, recusandae"
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, recusandae",
+      "watched": true
     },
     {
       "id": 4,
