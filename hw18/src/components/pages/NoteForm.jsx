@@ -1,19 +1,31 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import Header from "../Header";
 import Button from "../common/Button";
 import saveSVG from "../../images/save.svg";
 
 const colors = ["aqua", "blue", "fuchsia", "green", "lime", "maroon", "navy", "olive", "purple", "red", "teal", "yellow"];
 
-const AddNote = ({ onBack, onSaveNote }) => {
+const NoteForm = ({ note, onBack, onSaveNote }) => {
   const titleRef = useRef(null);
   const descRef = useRef(null);
+
+  useEffect(() => {
+    if (note) {
+      titleRef.current.value = note.title;
+      descRef.current.value = note.desc;
+    }
+  });
 
   const handleSubmit = () => {
     const { current: title } = titleRef;
 
     if (title.value) {
-      onSaveNote({ id: Date.now(), title: title.value, desc: descRef.current.value, color: colors[Math.floor(Math.random() * 12)] });
+      const newNote = { title: title.value, desc: descRef.current.value, color: colors[Math.floor(Math.random() * 12)] };
+      if (note) {
+        newNote.id = note.id;
+        newNote.color = note.color;
+      }
+      onSaveNote(newNote);
     } else {
       title.classList.add("invalid-input");
       title.focus();
@@ -34,4 +46,4 @@ const AddNote = ({ onBack, onSaveNote }) => {
   );
 };
 
-export default AddNote;
+export default NoteForm;

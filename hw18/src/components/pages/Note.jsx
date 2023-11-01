@@ -3,8 +3,9 @@ import Header from "../Header";
 import Button from "../common/Button";
 import DeleteModal from "../DeleteModal";
 import trashSVG from "../../images/trash.svg";
+import editSVG from "../../images/edit.svg";
 
-const Note = ({ note, onBack, onDelete }) => {
+const Note = ({ note, onBack, onDelete, onEdit }) => {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
 
   const handleCancel = () => setShowDeleteModal(false);
@@ -12,6 +13,7 @@ const Note = ({ note, onBack, onDelete }) => {
   return (
     <>
       <Header onBack={onBack}>
+        <Button icon={editSVG} onClick={() => onEdit(note)} />
         <Button icon={trashSVG} onClick={() => setShowDeleteModal(true)} />
       </Header>
 
