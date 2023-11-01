@@ -19,3 +19,7 @@
 .text-color {
   color: #c4c4c4;
 }
+
+.invalid-input::placeholder {
+  color: red;
+}

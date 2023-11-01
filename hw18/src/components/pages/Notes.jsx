@@ -4,8 +4,9 @@ import NoteCard from "../NoteCard";
 import searchSVG from "../../images/search.svg";
 import infoSVG from "../../images/info.svg";
 import noItemsSVG from "../../images/no-items.png";
+import addSVG from "../../images/add.svg";
 
-const Notes = ({ notes, onShowNote }) => {
+const Notes = ({ notes, onShowNote, onAddNote }) => {
   return (
     <>
       <Header title='Notes'>
@@ -13,7 +14,7 @@ const Notes = ({ notes, onShowNote }) => {
         <Button icon={infoSVG} />
       </Header>
 
-      <main className='flex flex-col gap-5 h-full'>
+      <main className='flex flex-col gap-5 min-h-full'>
         {notes.length ? (
           notes.map(note => <NoteCard key={note.id} note={note} onClick={onShowNote} />)
         ) : (
@@ -23,6 +24,10 @@ const Notes = ({ notes, onShowNote }) => {
           </div>
         )}
       </main>
+
+      <button className='p-2 shadow-md shadow-black rounded-full fixed right-10 bottom-10 bg-dark' onClick={onAddNote}>
+        <img src={addSVG} alt='add' />
+      </button>
     </>
   );
 };

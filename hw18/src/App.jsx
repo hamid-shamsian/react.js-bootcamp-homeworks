@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Notes from "./components/pages/Notes";
 import Note from "./components/pages/Note";
+import AddNote from "./components/pages/AddNote";
 
 const App = () => {
   const [page, setPage] = useState("notes");
@@ -24,10 +25,18 @@ const App = () => {
     setPage("notes");
   };
 
+  const handleAddNote = () => setPage("add");
+
+  const handleSaveNote = note => {
+    setNotes(prevNotes => [...prevNotes, note]);
+    setPage("notes");
+  };
+
   return (
-    <div className='bg-dark text-white h-screen px-5 pt-28 font-nunito'>
-      {page === "notes" && <Notes notes={notes} onShowNote={handleShowNote} />}
+    <div className='bg-dark text-white min-h-screen px-5 pt-28 pb-5 font-nunito'>
+      {page === "notes" && <Notes notes={notes} onShowNote={handleShowNote} onAddNote={handleAddNote} />}
       {page === "note" && <Note note={currentNote} onBack={handleBack} onDelete={handleDelete} />}
+      {page === "add" && <AddNote onBack={handleBack} onSaveNote={handleSaveNote} />}
     </div>
   );
 };
