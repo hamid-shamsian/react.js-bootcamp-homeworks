@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Header from "../Header";
 import NoteCard from "../NoteCard";
 import notFoundSVG from "../../images/not-found.png";
+import crossSVG from "../../images/close.svg";
 
 const Search = ({ notes, onBack, onShowNote }) => {
   const [query, setQuery] = useState("");
@@ -19,13 +20,18 @@ const Search = ({ notes, onBack, onShowNote }) => {
     <>
       <Header onBack={onBack}></Header>
 
-      <input
-        type='text'
-        value={query}
-        onChange={handleChange}
-        placeholder='Search in notes...'
-        className='outline-none bg-[#3b3b3b] rounded-full px-7 py-3 w-full text-lg'
-      />
+      <div className='bg-[#3b3b3b] rounded-full px-7 py-3 flex items-center'>
+        <input
+          type='text'
+          value={query}
+          onChange={handleChange}
+          placeholder='Search in notes...'
+          className='outline-none flex-1 text-lg bg-transparent'
+        />
+        <button onClick={() => setQuery("")}>
+          <img src={crossSVG} alt='' />
+        </button>
+      </div>
 
       <main className='flex flex-col gap-5 mt-10'>
         {count ? (
