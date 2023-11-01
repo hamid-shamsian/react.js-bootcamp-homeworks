@@ -12,11 +12,7 @@ const App = () => {
 
   const handleSubmitMovie = movie => {
     if (movieUnderAction) {
-      setMovies(prevMovies => {
-        const updatedMovies = [...prevMovies];
-        updatedMovies[prevMovies.indexOf(movieUnderAction)] = movie;
-        return updatedMovies;
-      });
+      setMovies(prevMovies => prevMovies.map(m => (m === movieUnderAction ? movie : m)));
       setMovieUnderAction(null);
     } else {
       setMovies(prevMovies => [...prevMovies, movie]);
@@ -46,9 +42,7 @@ const App = () => {
     setShowDeleteModal(false);
   };
 
-  const handleWatch = movie => {
-    setMovies(prevMovies => prevMovies.map(m => (m === movie ? { ...movie, watched: !movie.watched } : m)));
-  };
+  const handleWatch = movie => setMovies(prevMovies => prevMovies.map(m => (m === movie ? { ...movie, watched: !movie.watched } : m)));
 
   return (
     <div className='container mx-auto flex flex-col gap-10 px-6 py-10 max-w-xl'>

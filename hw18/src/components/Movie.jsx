@@ -3,7 +3,7 @@ const Movie = ({ movie, onDelete, onEdit, onWatch }) => {
 
   return (
     <div className='relative p-6 pb-8 flex flex-col items-center gap-5 bg-gray-300 rounded-xl shadow-lg xs:flex-row xs:items-start'>
-      <img className='w-full xs:w-32 h-fit rounded-lg' src='./images/movie.jpg' alt='movie cover image' />
+      <img className='w-full xs:w-32 h-fit rounded-lg' src='./images/movie.jpg' alt='movie cover' />
 
       <div>
         <h2 className='font-bold flex justify-between items-center'>
