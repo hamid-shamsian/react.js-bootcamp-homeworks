@@ -1,0 +1,70 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "title": "Shutter Island",
+      "genre": "Drama",
+      "year": 2019,
+      "rating": 3.4,
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, recusandae",
+      "watched": true
+    },
+    {
+      "id": 2,
+      "title": "The Lord of the Rings",
+      "genre": "Science Fiction",
+      "year": 2001,
+      "rating": 4.9,
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda"
+    },
+    {
+      "id": 3,
+      "title": "Inception",
+      "genre": "Drama",
+      "year": 2021,
+      "rating": 2,
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, recusandae",
+      "watched": true
+    },
+    {
+      "id": 4,
+      "title": "The Platform",
+      "genre": "Action",
+      "year": 1987,
+      "rating": 4.7,
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, recusandae adipisicing elit. Assumenda, recusandae"
+    },
+    {
+      "id": 5,
+      "title": "Interstellar",
+      "genre": "Science Fiction",
+      "year": 2005,
+      "rating": 3.2,
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, recusandae"
+    }
+  ],
+  "inputs": [
+    {
+      "name": "title",
+      "placeholder": "Title"
+    },
+    {
+      "name": "genre",
+      "placeholder": "Genre"
+    },
+    {
+      "name": "year",
+      "placeholder": "Release Year",
+      "type": "number"
+    },
+    {
+      "name": "rating",
+      "placeholder": "Rating",
+      "type": "number"
+    },
+    {
+      "placeholder": "Description",
+      "name": "desc"
+    }
+  ]
+}
