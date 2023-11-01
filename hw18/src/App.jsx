@@ -31,6 +31,7 @@ const App = () => {
 
   const handleSaveNote = note => {
     setNotes(prevNotes => (note.id ? prevNotes.map(n => (n.id === note.id ? note : n)) : [...prevNotes, { ...note, id: Date.now() }]));
+    setCurrentNote(null);
     setPage("notes");
   };
 
