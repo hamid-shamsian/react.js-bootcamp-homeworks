@@ -18,7 +18,7 @@ const Search = ({ notes, onBack, onShowNote }) => {
 
   return (
     <>
-      <Header onBack={onBack}></Header>
+      <Header title='Search Notes' onBack={onBack}></Header>
 
       <div className='bg-[#3b3b3b] rounded-full px-7 py-3 flex items-center'>
         <input
@@ -46,7 +46,7 @@ const Search = ({ notes, onBack, onShowNote }) => {
         ) : (
           <div className='flex flex-col items-center gap-5 mt-40'>
             <img src={notFoundSVG} alt='' />
-            <p className='text-xl text-color'>No items Found!</p>
+            {query && <p className='text-xl text-color'>No items Found!</p>}
           </div>
         )}
       </main>
