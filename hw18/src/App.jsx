@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Notes from "./components/pages/Notes";
 import Note from "./components/pages/Note";
 import AddNote from "./components/pages/AddNote";
+import Search from "./components/pages/Search";
 
 const App = () => {
   const [page, setPage] = useState("notes");
@@ -32,11 +33,14 @@ const App = () => {
     setPage("notes");
   };
 
+  const handleSearch = () => setPage("search");
+
   return (
     <div className='bg-dark text-white min-h-screen px-5 pt-28 pb-5 font-nunito'>
-      {page === "notes" && <Notes notes={notes} onShowNote={handleShowNote} onAddNote={handleAddNote} />}
+      {page === "notes" && <Notes notes={notes} onShowNote={handleShowNote} onAddNote={handleAddNote} onSearch={handleSearch} />}
       {page === "note" && <Note note={currentNote} onBack={handleBack} onDelete={handleDelete} />}
       {page === "add" && <AddNote onBack={handleBack} onSaveNote={handleSaveNote} />}
+      {page === "search" && <Search notes={notes} onBack={handleBack} onShowNote={handleShowNote} />}
     </div>
   );
 };

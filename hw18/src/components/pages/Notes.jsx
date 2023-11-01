@@ -6,19 +6,19 @@ import infoSVG from "../../images/info.svg";
 import noItemsSVG from "../../images/no-items.png";
 import addSVG from "../../images/add.svg";
 
-const Notes = ({ notes, onShowNote, onAddNote }) => {
+const Notes = ({ notes, onShowNote, onAddNote, onSearch }) => {
   return (
     <>
       <Header title='Notes'>
-        <Button icon={searchSVG} />
+        <Button icon={searchSVG} onClick={onSearch} />
         <Button icon={infoSVG} />
       </Header>
 
-      <main className='flex flex-col gap-5 min-h-full'>
+      <main className='flex flex-col gap-5'>
         {notes.length ? (
           notes.map(note => <NoteCard key={note.id} note={note} onClick={onShowNote} />)
         ) : (
-          <div className='flex flex-col justify-center items-center gap-5 h-full'>
+          <div className='flex flex-col items-center gap-5 mt-40'>
             <img src={noItemsSVG} alt='' />
             <p className='text-xl text-color'>Create your first Note!</p>
           </div>
