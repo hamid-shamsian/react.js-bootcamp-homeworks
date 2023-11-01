@@ -7,7 +7,3 @@
 * {
   box-sizing: border-box;
 }
-
-.shadow-no-offset {
-  box-shadow: 0 0 10px black;
-}
