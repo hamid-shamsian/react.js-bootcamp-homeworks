@@ -28,9 +28,11 @@ const Search = ({ notes, onBack, onShowNote }) => {
           placeholder='Search in notes...'
           className='outline-none flex-1 text-lg bg-transparent'
         />
-        <button onClick={() => setQuery("")}>
-          <img src={crossSVG} alt='' />
-        </button>
+        {query && (
+          <button onClick={() => setQuery("")}>
+            <img src={crossSVG} alt='' />
+          </button>
+        )}
       </div>
 
       <main className='flex flex-col gap-5 mt-10'>

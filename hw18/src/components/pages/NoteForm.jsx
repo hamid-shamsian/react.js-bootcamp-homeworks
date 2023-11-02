@@ -3,7 +3,7 @@ import Header from "../Header";
 import Button from "../common/Button";
 import saveSVG from "../../images/save.svg";
 
-const colors = ["aqua", "blue", "fuchsia", "green", "lime", "maroon", "navy", "olive", "purple", "red", "teal", "yellow"];
+const colors = ["#ff9d9e", "#fd99ff", "#90f48e", "#fff599", "#9dffff", "#b69cff"];
 
 const NoteForm = ({ note, onBack, onSaveNote }) => {
   const titleRef = useRef(null);
@@ -20,11 +20,8 @@ const NoteForm = ({ note, onBack, onSaveNote }) => {
     const { current: title } = titleRef;
 
     if (title.value) {
-      const newNote = { title: title.value, desc: descRef.current.value, color: colors[Math.floor(Math.random() * 12)] };
-      if (note) {
-        newNote.id = note.id;
-        newNote.color = note.color;
-      }
+      const randomColor = colors[Math.floor(Math.random() * colors.length)];
+      const newNote = { title: title.value, desc: descRef.current.value, color: note?.color ?? randomColor, id: note?.id };
       onSaveNote(newNote);
     } else {
       title.classList.add("invalid-input");
