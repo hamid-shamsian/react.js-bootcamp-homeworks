@@ -10,6 +10,7 @@ const HeroBG = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 60px;
 `;
 
 const HeroMsg = styled.div`
