@@ -1,11 +1,18 @@
+import { Col, Header, Hero, Row, Products } from "./components";
 import "./App.css";
-import { Header, Hero } from "./components";
 
 const App = () => {
   return (
     <>
       <Header></Header>
+
       <Hero></Hero>
+
+      <Row>
+        <Col>
+          <Products />
+        </Col>
+      </Row>
     </>
   );
 };
