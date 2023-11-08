@@ -1,6 +1,9 @@
+import { useState } from "react";
 import styled from "styled-components";
-import { Heading, ProductCard } from "../../base";
+import { Heading } from "../../base";
 import { Grid } from "../../layout";
+import { ProductCard } from "../productCard";
+import { ProductModal } from "../productModal";
 import data from "../../../products.json";
 
 const { products } = data;
@@ -12,6 +15,8 @@ const P = styled.p`
 `;
 
 export const Products = () => {
+  const [showingProduct, setShowingProduct] = useState(null);
+
   return (
     <>
       <Heading>Products</Heading>
@@ -19,9 +24,11 @@ export const Products = () => {
 
       <Grid cols={2} $gap={35}>
         {products.map(p => (
-          <ProductCard key={p.id} product={p} />
+          <ProductCard key={p.id} product={p} onClick={() => setShowingProduct(p)} />
         ))}
       </Grid>
+
+      {showingProduct && <ProductModal product={showingProduct} onClose={() => setShowingProduct(null)} />}
     </>
   );
 };
