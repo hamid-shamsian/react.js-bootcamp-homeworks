@@ -1,8 +1,13 @@
 import "./App.css";
-import { Hero } from "./components";
+import { Header, Hero } from "./components";
 
 const App = () => {
-  return <Hero></Hero>;
+  return (
+    <>
+      <Header></Header>
+      <Hero></Hero>
+    </>
+  );
 };
 
 export default App;
