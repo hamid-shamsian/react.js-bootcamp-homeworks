@@ -1,6 +1,8 @@
+import { useContext, useState } from "react";
 import styled from "styled-components";
 import { Backdrop } from "../../layout";
-import { Button, ProductPrice, ProductTitle } from "../../base";
+import { Button, ProductPrice, ProductTitle, Quantity } from "../../base";
+import { CartContext } from "../../../contexts/cart-context";
 import freeShipImg from "../../../images/free-shipping.jpg";
 import cartImg from "../../../images/cart-white.png";
 
@@ -36,7 +38,30 @@ const ProductDetails = styled.div`
   margin: 20px 0;
 `;
 
+const Div = styled.div`
+  display: flex;
+  gap: 10px;
+  position: relative;
+`;
+
+const Warning = styled.div`
+  position: absolute;
+  right: 0;
+  bottom: -30px;
+  color: #666;
+`;
+
 export const ProductModal = ({ product, onClose }) => {
+  const [count, setCount] = useState(1);
+  const { cart, dispatchCart } = useContext(CartContext);
+
+  const existedInCart = cart.find(item => item.id === product.id);
+
+  const handleAddToCart = () => {
+    dispatchCart({ type: "ADD", item: { ...product, count } });
+    if (!existedInCart) onClose();
+  };
+
   return (
     <Backdrop onClick={onClose}>
       <Container>
@@ -53,10 +78,15 @@ export const ProductModal = ({ product, onClose }) => {
             <ProductPrice>${product.price}</ProductPrice>
             <ProductDetails>{product.details}</ProductDetails>
           </div>
-          <Button>
-            <img src={cartImg} alt='' />
-            Add to Cart
-          </Button>
+
+          <Div>
+            {!existedInCart && <Quantity count={count} onIncr={() => setCount(c => c + 1)} onDecr={() => setCount(c => c - 1)} />}
+            <Button onClick={handleAddToCart} $forbidden={existedInCart}>
+              <img src={cartImg} alt='' />
+              Add to Cart
+            </Button>
+            {existedInCart && <Warning>Already in your Cart!</Warning>}
+          </Div>
         </RightCol>
       </Container>
     </Backdrop>

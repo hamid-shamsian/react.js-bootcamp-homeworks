@@ -11,4 +11,6 @@ export const Button = styled.button`
   display: flex;
   justify-content: center;
   gap: 10px;
+  flex-grow: 1;
+  cursor: ${({ $forbidden }) => ($forbidden ? "not-allowed" : "pointer")};
 `;

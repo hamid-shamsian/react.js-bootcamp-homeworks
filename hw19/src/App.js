@@ -1,5 +1,6 @@
 import { Col, Header, Hero, Row, Products } from "./components";
 import "./App.css";
+import CartProvider from "./contexts/cart-context";
 
 const App = () => {
   return (
@@ -8,11 +9,13 @@ const App = () => {
 
       <Hero></Hero>
 
-      <Row>
-        <Col>
-          <Products />
-        </Col>
-      </Row>
+      <CartProvider>
+        <Row>
+          <Col>
+            <Products />
+          </Col>
+        </Row>
+      </CartProvider>
     </>
   );
 };
