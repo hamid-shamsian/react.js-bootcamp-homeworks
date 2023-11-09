@@ -1,4 +1,4 @@
-import { Col, Header, Hero, Row, Products } from "./components";
+import { Col, Header, Hero, Row, Products, Cart } from "./components";
 import "./App.css";
 import CartProvider from "./contexts/cart-context";
 
@@ -13,6 +13,9 @@ const App = () => {
         <Row>
           <Col>
             <Products />
+          </Col>
+          <Col>
+            <Cart />
           </Col>
         </Row>
       </CartProvider>
