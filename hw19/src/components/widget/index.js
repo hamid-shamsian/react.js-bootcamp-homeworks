@@ -6,3 +6,4 @@ export * from "./productModal";
 export * from "./cart";
 export * from "./cartItem";
 export * from "./checkoutModal";
+export * from "./confirmModal";

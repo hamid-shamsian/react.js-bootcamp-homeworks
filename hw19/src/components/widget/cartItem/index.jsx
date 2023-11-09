@@ -39,23 +39,31 @@ const RemoveBtn = styled.span`
   }
 `;
 
-export const CartItem = ({ item, onRemove, onIncr, onDecr }) => {
+const Badge = styled.span`
+  background-color: aqua;
+  display: inline-block;
+  padding: 5px 13px;
+  border-radius: 50%;
+`;
+
+export const CartItem = ({ item, onRemove, onIncr, onDecr, $static }) => {
   return (
-    <Card>
+    <Card $static={$static}>
       <Container>
         <ImgWrapper>
-          <img src={item.img} alt='' width={200} />
+          <img src={item.img} alt='' width={$static ? 100 : 200} />
         </ImgWrapper>
         <Div>
           <ProductTitle>{item.title}</ProductTitle>
           <Div2>
             <ProductPrice>${item.price}</ProductPrice>
-            <Quantity qty={item.qty} onIncr={() => onIncr(item.id)} onDecr={() => onDecr(item.id)} />
+            {onIncr && <Quantity qty={item.qty} onIncr={() => onIncr(item.id)} onDecr={() => onDecr(item.id)} />}
+            {!onIncr && <Badge>{item.qty}</Badge>}
             <Total>
               <ProductPrice>${(item.price * item.qty).toFixed(2)}</ProductPrice>
             </Total>
           </Div2>
-          <RemoveBtn onClick={() => onRemove(item.id)} />
+          {onRemove && <RemoveBtn onClick={() => onRemove(item.id)} />}
         </Div>
       </Container>
     </Card>

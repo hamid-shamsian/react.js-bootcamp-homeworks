@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Button = styled.button`
   border-radius: 4px;
-  background: #56b280;
+  background: ${({ $forbidden }) => ($forbidden ? "#999" : "#56b280")};
   border: 0;
   padding: ${({ $size }) => ($size === "small" ? "2px 20px" : "10px 50px")};
   color: #fff;

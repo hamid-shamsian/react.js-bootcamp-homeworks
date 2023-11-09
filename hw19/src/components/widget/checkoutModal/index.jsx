@@ -36,7 +36,7 @@ const validate = ({ name, value }) => {
   }
 };
 
-export const CheckoutModal = ({ onClose }) => {
+export const CheckoutModal = ({ onClose, onSubmit }) => {
   const [inputs, setInputs] = useState(initialState);
 
   const handleChange = ({ target }) => {
@@ -44,6 +44,7 @@ export const CheckoutModal = ({ onClose }) => {
   };
 
   const { name, email, address } = inputs;
+  const formIsValid = name.valid && email.valid && address.valid;
 
   return (
     <Backdrop onClick={onClose}>
@@ -56,7 +57,7 @@ export const CheckoutModal = ({ onClose }) => {
           <Input type='text' name='address' placeholder='Address' $valid={address.valid} value={address.value} onChange={handleChange} />
         </Div>
 
-        <Button $size='small' $forbidden={!name.valid || !email.valid || !address.valid}>
+        <Button $size='small' $forbidden={!formIsValid} onClick={() => formIsValid && onSubmit(inputs)}>
           Submit
         </Button>
       </Container>
