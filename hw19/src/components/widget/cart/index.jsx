@@ -4,6 +4,7 @@ import { Button, Heading } from "../../base";
 import { CartContext } from "../../../contexts/cart-context";
 import { CartItem } from "../cartItem";
 import { CheckoutModal } from "../checkoutModal";
+import { ConfirmModal } from "../confirmModal";
 
 const Container = styled.div`
   display: flex;
@@ -30,18 +31,20 @@ const P = styled.p`
 
 export const Cart = () => {
   const { cart, dispatchCart } = useContext(CartContext);
+
   const [modal, setModal] = useState(null);
+  const [orderData, setOrderData] = useState(null);
 
-  const handleRemoveItem = id => {
-    dispatchCart({ type: "DELETE", itemId: id });
-  };
+  const handleRemoveItem = id => dispatchCart({ type: "DELETE", itemId: id });
+  const handleIncr = id => dispatchCart({ type: "INCR_QTY", itemId: id });
+  const handleDecr = id => dispatchCart({ type: "DECR_QTY", itemId: id });
 
-  const handleIncr = id => {
-    dispatchCart({ type: "INCR_QTY", itemId: id });
-  };
-
-  const handleDecr = id => {
-    dispatchCart({ type: "DECR_QTY", itemId: id });
+  const handleSubmitOrder = customerData => {
+    const data = { cart, customer: {} };
+    for (let key in customerData) data.customer[key] = customerData[key].value;
+    setOrderData(data);
+    setModal("confirmation");
+    dispatchCart({ type: "CLEAR" });
   };
 
   const subTotal = cart.reduce((sum, item) => sum + item.qty * item.price, 0).toFixed(2);
@@ -65,7 +68,8 @@ export const Cart = () => {
         </Button>
       </Div>
 
-      {modal === "checkout" && <CheckoutModal onClose={() => setModal(null)} />}
+      {modal === "checkout" && <CheckoutModal onClose={() => setModal(null)} onSubmit={handleSubmitOrder} />}
+      {modal === "confirmation" && <ConfirmModal orderData={orderData} onClose={() => setModal(null)} />}
     </>
   );
 };
