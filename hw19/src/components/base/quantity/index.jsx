@@ -42,7 +42,7 @@ const IncrBtn = styled.button`
   }
 `;
 
-const Count = styled.div`
+const Qty = styled.div`
   width: 40px;
   background-color: white;
   display: flex;
@@ -51,11 +51,11 @@ const Count = styled.div`
   font-weight: bold;
 `;
 
-export const Quantity = ({ count = 1, onIncr, onDecr }) => {
+export const Quantity = ({ qty = 1, onIncr, onDecr }) => {
   return (
     <Div>
-      <DecrBtn onClick={() => count - 1 && onDecr()} />
-      <Count>{count}</Count>
+      <DecrBtn onClick={() => qty - 1 && onDecr()} />
+      <Qty>{qty}</Qty>
       <IncrBtn onClick={onIncr} />
     </Div>
   );

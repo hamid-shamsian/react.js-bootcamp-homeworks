@@ -52,13 +52,13 @@ const Warning = styled.div`
 `;
 
 export const ProductModal = ({ product, onClose }) => {
-  const [count, setCount] = useState(1);
+  const [qty, setQty] = useState(1);
   const { cart, dispatchCart } = useContext(CartContext);
 
   const existedInCart = cart.find(item => item.id === product.id);
 
   const handleAddToCart = () => {
-    dispatchCart({ type: "ADD", item: { ...product, count } });
+    dispatchCart({ type: "ADD", item: { ...product, qty } });
     if (!existedInCart) onClose();
   };
 
@@ -80,7 +80,7 @@ export const ProductModal = ({ product, onClose }) => {
           </div>
 
           <Div>
-            {!existedInCart && <Quantity count={count} onIncr={() => setCount(c => c + 1)} onDecr={() => setCount(c => c - 1)} />}
+            {!existedInCart && <Quantity qty={qty} onIncr={() => setQty(q => q + 1)} onDecr={() => setQty(q => q - 1)} />}
             <Button onClick={handleAddToCart} $forbidden={existedInCart}>
               <img src={cartImg} alt='' />
               Add to Cart
