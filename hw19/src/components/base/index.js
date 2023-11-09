@@ -5,3 +5,4 @@ export * from "./imgWrapper";
 export * from "./productPrice";
 export * from "./productTitle";
 export * from "./quantity";
+export * from "./input";
