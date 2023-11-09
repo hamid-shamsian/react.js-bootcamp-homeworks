@@ -5,3 +5,4 @@ export * from "./productCard";
 export * from "./productModal";
 export * from "./cart";
 export * from "./cartItem";
+export * from "./checkoutModal";

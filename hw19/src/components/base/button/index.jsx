@@ -4,13 +4,13 @@ export const Button = styled.button`
   border-radius: 4px;
   background: #56b280;
   border: 0;
-  padding: 10px 50px;
+  padding: ${({ $size }) => ($size === "small" ? "2px 20px" : "10px 50px")};
   color: #fff;
   font-family: Roboto;
   font-size: 20px;
   display: flex;
   justify-content: center;
   gap: 10px;
-  flex-grow: 1;
+  ${({ $size }) => ($size === "small" ? "" : "flex-grow: 1;")}
   cursor: ${({ $forbidden }) => ($forbidden ? "not-allowed" : "pointer")};
 `;

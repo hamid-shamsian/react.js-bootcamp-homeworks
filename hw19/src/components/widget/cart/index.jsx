@@ -1,8 +1,9 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import styled from "styled-components";
 import { Button, Heading } from "../../base";
 import { CartContext } from "../../../contexts/cart-context";
 import { CartItem } from "../cartItem";
+import { CheckoutModal } from "../checkoutModal";
 
 const Container = styled.div`
   display: flex;
@@ -29,6 +30,7 @@ const P = styled.p`
 
 export const Cart = () => {
   const { cart, dispatchCart } = useContext(CartContext);
+  const [modal, setModal] = useState(null);
 
   const handleRemoveItem = id => {
     dispatchCart({ type: "DELETE", itemId: id });
@@ -58,8 +60,12 @@ export const Cart = () => {
 
       <Div>
         <p>Sub-Total: ${subTotal}</p>
-        <Button $forbidden={!cart.length}>CheckOut</Button>
+        <Button $forbidden={!cart.length} onClick={() => cart.length && setModal("checkout")}>
+          CheckOut
+        </Button>
       </Div>
+
+      {modal === "checkout" && <CheckoutModal onClose={() => setModal(null)} />}
     </>
   );
 };
