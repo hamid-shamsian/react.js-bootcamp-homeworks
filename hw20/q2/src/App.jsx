@@ -4,6 +4,7 @@ import Input from "./components/Input";
 import Weather from "./components/Weather";
 import { debounce } from "./utils/utilityFuncs";
 import { api_key, geo_url, wth_url } from "./config";
+import spinner from "../src/images/spinner.svg";
 
 const App = () => {
   const [cityQuery, setCityQuery] = useState("");
@@ -53,7 +54,11 @@ const App = () => {
           {weather && <Weather weather={weather} />}
 
           {cityQuery && !weather && !loading && <p className='text-center'>City Not Found!</p>}
-          {cityQuery && !weather && loading && <p className='text-center'>Searching!</p>}
+          {cityQuery && !weather && loading && (
+            <div className='flex justify-center'>
+              <img src={spinner} alt='' />
+            </div>
+          )}
 
           {error && <p className='text-center'>Something went wrong!</p>}
         </main>
