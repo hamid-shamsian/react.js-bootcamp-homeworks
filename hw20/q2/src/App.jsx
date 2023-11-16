@@ -18,7 +18,6 @@ const App = () => {
       debounce(async city => {
         if (!city) return setWeather(null);
         try {
-          setError(false);
           const { data: cityCoord } = await axios.get(`${geo_url}?q=${city}&limit=1${api_key}`);
 
           if (cityCoord[0]) {
@@ -41,6 +40,7 @@ const App = () => {
     setLoading(true);
     setWeather(null);
     fetchWeather(cityQuery);
+    setError(false);
   }, [cityQuery, fetchWeather]);
 
   const onInputChange = ({ target }) => setCityQuery(target.value);
@@ -53,7 +53,8 @@ const App = () => {
         <main className='bg-gray-900 w-[700px] mx-auto rounded-xl text-white p-10 mt-16'>
           {weather && <Weather weather={weather} />}
 
-          {cityQuery && !weather && !loading && <p className='text-center'>City Not Found!</p>}
+          {cityQuery && !weather && !loading && !error && <p className='text-center'>City Not Found!</p>}
+
           {cityQuery && !weather && loading && (
             <div className='flex justify-center'>
               <img src={spinner} alt='' />
