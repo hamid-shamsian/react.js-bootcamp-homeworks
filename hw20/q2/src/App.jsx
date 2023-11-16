@@ -2,6 +2,8 @@ import { useCallback, useEffect, useState } from "react";
 import axios from "axios";
 import Input from "./components/Input";
 import { debounce } from "./utils/utilityFuncs";
+import { api_key, geo_url, wth_url } from "./config";
+import Weather from "./components/Weather";
 
 const App = () => {
   const [cityQuery, setCityQuery] = useState("");
@@ -11,16 +13,12 @@ const App = () => {
   const fetchWeather = useCallback(
     debounce(async city => {
       try {
-        const { data: cityCoord } = await axios.get(
-          `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=beadc217714fa0edd12c5a362713d399`
-        );
-
+        const { data: cityCoord } = await axios.get(`${geo_url}?q=${city}&limit=1${api_key}`);
         if (cityCoord[0]) {
           const { lat, lon } = cityCoord[0];
-          const weather = await axios.get(
-            `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=1bac422f64675811e19721aeb41fe86a`
-          );
+          const weather = await axios.get(`${wth_url}?lat=${lat}&lon=${lon}${api_key}`);
           setWeather(weather.data);
+          setError(false);
         } else {
           setWeather(null);
         }
@@ -32,10 +30,8 @@ const App = () => {
   );
 
   useEffect(() => {
-    if (cityQuery.length > 2) fetchWeather(cityQuery);
-    else {
-      setWeather(null);
-    }
+    if (cityQuery.length) fetchWeather(cityQuery);
+    else setWeather(null);
   }, [cityQuery, fetchWeather]);
 
   const onInputChange = ({ target }) => setCityQuery(target.value);
@@ -45,23 +41,7 @@ const App = () => {
       <Input value={cityQuery} onChange={onInputChange} />
 
       <main className='bg-gray-900 w-[600px] mx-auto rounded-xl text-white p-7'>
-        {weather && (
-          <div>
-            <p className='text-center font-bold mb-5'>{weather.name}</p>
-            <div className='flex justify-between'>
-              <p>Pressure</p>
-              <p>{weather.main.pressure}</p>
-            </div>
-            <div className='flex justify-between'>
-              <p>Humidity</p>
-              <p>{weather.main.humidity}</p>
-            </div>
-            <div className='flex justify-between'>
-              <p>Wind Speed</p>
-              <p>{weather.wind.speed}</p>
-            </div>
-          </div>
-        )}
+        {weather && <Weather weather={weather} />}
 
         {cityQuery && !weather && <p className='text-center'>City Not Found!</p>}
 
