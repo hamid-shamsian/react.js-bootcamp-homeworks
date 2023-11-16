@@ -4,5 +4,5 @@ tbody tr:nth-child(odd) {
 
 td,
 th {
-  @apply px-5 py-2;
+  @apply px-5 py-1;
 }
