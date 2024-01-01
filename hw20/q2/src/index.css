@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.cover {
+  background-image: url("./images/cover.png");
+  background-size: cover;
+  height: 370px;
+  transform: scale(1.3);
+}

@@ -1,0 +1,8 @@
+tbody tr:nth-child(odd) {
+  @apply bg-blue-500;
+}
+
+td,
+th {
+  @apply px-5 py-1;
+}
