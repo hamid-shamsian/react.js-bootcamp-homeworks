@@ -1,4 +1,4 @@
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -6,4 +6,20 @@
 
 * {
   box-sizing: border-box;
+}
+
+.font-nunito {
+  font-family: Nunito;
+}
+
+.bg-dark {
+  background-color: #252525;
+}
+
+.text-color {
+  color: #c4c4c4;
+}
+
+.invalid-input::placeholder {
+  color: red;
 }
